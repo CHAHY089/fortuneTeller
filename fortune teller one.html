@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortune Teller</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #container {
+            margin: 50px auto;
+            width: 70%;
+            border: 2px solid #ddd;
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #444, #222);
+        }
+
+        h1 {
+            color: #fbc531;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #f39c12;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e74c3c;
+        }
+
+        #fortune {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #4cd137;
+        }
+        
+        footer {
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Ask the Fortune Teller</h1>
+        <p>Click the button to reveal your fortune today!</p>
+        <button onclick="revealFortune()">Reveal My Fortune</button>
+        <div id="fortune"></div>
+    </div>
+
+    <script>
+        const fortunes = [
+            "You will have a day filled with joy!",
+            "A surprise encounter will bring great news.",
+            "Happiness is just around the corner.",
+            "Love will find you in unexpected places.",
+            "Today is perfect for starting a new hobby.",
+            "You will accomplish a long-desired goal.",
+            "Someone will give you a heartfelt compliment."
+        ];
+
+        function revealFortune() {
+            const randomIndex = Math.floor(Math.random() * fortunes.length);
+            document.getElementById('fortune').innerText = fortunes[randomIndex];
+        }
+    </script>
+</body>
+<footer>Chan Fortune @2025</footer>
+</html>
